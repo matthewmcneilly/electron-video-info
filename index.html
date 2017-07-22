@@ -18,5 +18,18 @@ access to files on the fly without input from the user
       <label>Select a video</label>
       <input type="file" accept="video/*" />
     </div>
+    <button type="submit">Get Info</button>
   </form>
+
+
+  <script>
+  // Prevent default submit action of refresh
+    document.querySelector('form').addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      //debugger;
+      
+      const file = document.querySelector('input').files[0];
+    });
+  </script>
 </body>
