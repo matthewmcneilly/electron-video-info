@@ -4,6 +4,7 @@ A simple Electron desktop starter application designed to display information ab
 
 ## Installation
 `npm install`
+`npm run electron`
 
 #### View Code in IDE
 `idename .`
