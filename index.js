@@ -7,9 +7,15 @@ This file is in charge of the main parent process
 const electron = require('electron');
 
 // See script section in packages.json to see where electron starts
-const { app } = electron;
+// It executes index.js
+const { app, BrowserWindow } = electron;
 
+// Example of even based programming
 // When app process is ready/initated then console log
 app.on('ready', () => {
-  console.log('Shes a lady, woow, woow woow, shes a lady');
+  //console.log('Shes a lady, woow, woow woow, shes a lady');
+
+  // Create a new window and load current directories index.html
+  const mainWindow = new BrowserWindow({});
+  mainWindow.loadURL(`file://${__dirname}/index.html`);
 });
