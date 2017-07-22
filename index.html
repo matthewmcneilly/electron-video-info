@@ -1,5 +1,22 @@
+<!--
+Refresh the app to see changes
+Only electron based code in index.js needs requires a rebuild
+
+Tradition html buttons (input elements) can be used if all
+that is needed is for the user to specifically select a file
+
+Electron buttons will be needed however if the application needs
+access to files on the fly without input from the user
+-->
+
 <head>
 </head>
 <body>
   <h1>Video Info</h1>
+  <form>
+    <div>
+      <label>Select a video</label>
+      <input type="file" accept="video/*" />
+    </div>
+  </form>
 </body>
