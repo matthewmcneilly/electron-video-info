@@ -39,8 +39,13 @@ in the index.js electron logic, so that the code is reusable for the web
 
       //debugger;
 
-      // Store info about about inputs selected file
-      const file = document.querySelector('input').files[0];
+      // Descructure out the path info about about the inputs selected file
+      const { path } = document.querySelector('input').files[0];
+
+      // Send message to index.js
+      // One message convention is noun:verb from backbone development
+      // which is also very event driven
+      ipcRenderer.send('video:send', path);
     });
   </script>
 </body>
