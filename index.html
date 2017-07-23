@@ -7,6 +7,12 @@ that is needed is for the user to specifically select a file
 
 Electron buttons will be needed however if the application needs
 access to files on the fly without input from the user
+
+Electron apps can access everything a typical browser could and also
+everything node related
+
+With Electron we want to keep everything webish in index.html, everything else
+in the index.js electron logic, so that the code is reusable for the web
 -->
 
 <head>
@@ -23,12 +29,17 @@ access to files on the fly without input from the user
 
 
   <script>
-  // Prevent default submit action of refresh
+    // ipcRenderer is used to communication across processes
+    const electron = require('electron');
+    const { ipcRenderer } = electron;
+
+    // Prevent default refresh action of submit button
     document.querySelector('form').addEventListener('submit', (event) => {
-      event.preventDefault();
+    event.preventDefault();
 
       //debugger;
-      
+
+      // Store info about about inputs selected file
       const file = document.querySelector('input').files[0];
     });
   </script>
