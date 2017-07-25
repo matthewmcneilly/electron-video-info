@@ -1,15 +1,22 @@
 ## Introduction
 
-A simple Electron desktop starter application designed to display information about local videos.
+A simple Electron desktop starter application designed to display duration metadata about local videos.
 
 ## Installation
+
 `npm install`
+
+Install [FFmpeg](https://github.com/adaptlearning/adapt_authoring/wiki/Installing-FFmpeg)
+
 `npm run electron`
 
-#### View Code in IDE
-`idename .`
-
 ## API Reference
+
+[FFmpeg](https://ffmpeg.org/download.html)
+
+[Udemy Course](https://www.udemy.com/electron-react-tutorial/)
+
+[Electron](https://electron.atom.io/)
 
 ## License
 

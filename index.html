@@ -50,7 +50,7 @@ in the index.js electron logic, so that the code is reusable for the web
       ipcRenderer.send('video:submit', path);
     });
 
-    // Output recieved duration data to the h1 tag
+    // Output recieved duration data from Electron app to the h1 tag
     ipcRenderer.on('video:metadata', (event, duration) => {
       document.querySelector('#result').innerHTML = `Video is ${duration} seconds long`;
     });

@@ -31,7 +31,7 @@ ipcMain.on('video:submit', (event, path) => {
   ffmpeg.ffprobe(path, (err, metadata) => {
     //console.log('Video Duration: ', metadata.format.duration);
 
-    // Send duration data to index.html
+    // Send duration data to index.html (MainWindow)
     mainWindow.webContents.send('video:metadata', metadata.format.duration);
   });
 });
