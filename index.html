@@ -27,6 +27,8 @@ in the index.js electron logic, so that the code is reusable for the web
     <button type="submit">Get Info</button>
   </form>
 
+  <h1 id="result"></h1>
+
 
   <script>
     // ipcRenderer is used to communication across processes
@@ -45,7 +47,12 @@ in the index.js electron logic, so that the code is reusable for the web
       // Send message to index.js
       // One message convention is noun:verb from backbone development
       // which is also very event driven
-      ipcRenderer.send('video:send', path);
+      ipcRenderer.send('video:submit', path);
+    });
+
+    // Output recieved duration data to the h1 tag
+    ipcRenderer.on('video:metadata', (event, duration) => {
+      document.querySelector('#result').innerHTML = `Video is ${duration} seconds long`;
     });
   </script>
 </body>
